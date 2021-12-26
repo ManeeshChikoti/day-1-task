@@ -1,0 +1,41 @@
+1.question: Write a blog on Difference between HTTP1.1 vs HTTP2
+ Answer:
+
+ HTTP1.1:
+
+
+ ->PIPELINING: HTTP/1.1 uses pipelining which allows second request to be sent before answer to the first was fully    made this reduced the response time.but the drawbacks in this method are solved using multiplexing in HTTP/2.
+
+ -> here the data is sent as plain text.
+
+ ->HTTP/1.1 uses resource lining to include required resource directly within html document only if the developer    knows it in advance which resource the client machine will need to to render the page.but it has  drawbacks    which are solved in HTTP/2 using server push.
+
+
+ HTTP/2:
+
+
+ ->MULTIPLEXING: HTTP/2  uses single tcp connection to send multiple streams of data at a time.multiplexing solves certain issues of HTTP/1.1.
+
+ ->here the text is converted to binary code by using binary protocol,however multiple  streams of data waiting for   same resource still causes issues,this issue  was resolved by using prioritization i.e., the order in which streams   of data  is loaded.it prioritizes the streams of data by assigning weights,id's and parent id's to the them.parent   id refers to the stream which it is dependent on.the one without parent id is directly associated to root      node.briefly speaking,the one with high priority gets loaded first.
+
+ ->SERVERPUSH:server only sends the data if the client asks for it.but, this approach is not always suitable for    mordern day webpages.HTTP/2 solves this issue by allowing servers to push the content before client asks for       it.the server also sends a message letting a client know what pushed content to expect.this significantly reduces     server load.
+
+ ->HEADER COMPRESSION:HTTP/2 uses advanced method called HPACK that eliminates redundant information in header    pack.both client and server maintain the list of headers used in previous client-server requests.HPACK compresses    the header before  and is transferred to the server,which then looks for  the encoded information in a list of    previously trasferred header values to reconstruct the full header information.
+
+ ->web browsers only support HTTP/2 via encrypted connections,which increases user and application secutity.
+
+2.write a blog about object and its internal representation in javascript?
+  Answer:
+
+ -> objects are unordered collection of related data,of primitive or reference type,which are stored in the  form of key and value pairs.objects are representataion of real world entities.
+
+ ->objects can be created using object literals and new keyword.
+
+ ->object literal:these are list of key-value pairs seperated by comma closed in curly  braces.key is string  and value can be anythig
+
+ ->eg:let details={ Name:"Maneesh",
+                    Age: 24,
+                    Location:"Medak"
+                    }
+ -> object can also be created using new keyword
+    eg: let obj= new  Object();
